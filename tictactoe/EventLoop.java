@@ -18,7 +18,7 @@ public class EventLoop {
         state.setGameState(Constants.GET_O_NAME);
     
       } else if (gameState == Constants.GET_O_NAME) {
-        state.setYName(ui.promptForName(Constants.Y));
+        state.setYName(ui.promptForName(Constants.O));
         state.setGameState(Constants.GET_X_MOVE);
     
       } else if (gameState == Constants.GET_X_MOVE) {
@@ -37,7 +37,7 @@ public class EventLoop {
 
       } else if (gameState == Constants.MAKE_MOVE) {
         ui.printMove(state, row, col);
-        state.setBoardCell(state.whoseMove, row, col);
+        state.setBoardCell(state.getWhoseMove(), row, col);
         state.setGameState(Constants.CHECK_IF_WINNER);
 
       } else if (gameState == Constants.CHECK_IF_WINNER) {
